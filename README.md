@@ -27,6 +27,7 @@ pub fn process_instruction(mut context: InstructionContext) -> ProgramResult {
     let MaybeAccount::Account(instructions_sysvar) = context.next_account()? else {
         return Err(ProgramError::NotEnoughAccountKeys);
     };
+    // Fails if the first instruction is an advance nonce.
     ensure_never_nonce(&instructions_sysvar, ProgramError::InvalidArgument)
 }
 ```
