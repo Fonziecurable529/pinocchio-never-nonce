@@ -18,17 +18,6 @@ nostd_panic_handler!();
 // Process the input lazily.
 lazy_program_entrypoint!(process_instruction);
 
-#[inline(always)]
-pub fn is_system_program(address: &Address) -> bool {
-    let ptr = address as *const _ as *const u64;
-    unsafe {
-        core::ptr::read_unaligned(ptr) == 0
-            && core::ptr::read_unaligned(ptr.add(1)) == 0
-            && core::ptr::read_unaligned(ptr.add(2)) == 0
-            && core::ptr::read_unaligned(ptr.add(3)) == 0
-    }
-}
-
 pub fn process_instruction(mut context: InstructionContext) -> ProgramResult {
     let MaybeAccount::Account(account) = context.next_account()? else {
         return Err(ProgramError::NotEnoughAccountKeys);
