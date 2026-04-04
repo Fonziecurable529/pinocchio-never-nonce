@@ -52,7 +52,7 @@ Add `p-never-nonce` as a dependency with the `"cpi"` feature enabled:
 cargo add p-never-nonce --features cpi
 ```
 
-Invoke the "never-nonce" program from your program. The program id of the "never-nonce" program is: `pnn1ctaR1tbP7EGrcz3WtrJKknRxKmKqADztKY9C3YJ`.
+Invoke the "never-nonce" program from your program.
 
 #### Example
 
@@ -108,6 +108,10 @@ let tx = Transaction::new_signed_with_payer(
     connection.get_latest_blockhash()?,
 );
 ```
+
+## Program ID
+
+`pnn1ctaR1tbP7EGrcz3WtrJKknRxKmKqADztKY9C3YJ`
 
 ## License
 
