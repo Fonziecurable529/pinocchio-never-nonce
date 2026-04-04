@@ -46,7 +46,7 @@ runs:
       if: ${{ inputs.solana == 'true' }}
       uses: solana-program/actions/install-solana@678f622be092844a943327c17430401d871e6998  # v1
       with:
-        version: ${{ env.SOLANA_VERSION }}
+        version: ${{ env.SOLANA_CLI_VERSION }}
         cache: true
 
     - name: Install 'cargo-audit'
