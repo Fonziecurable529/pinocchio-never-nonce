@@ -1,0 +1,58 @@
+name: Main
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+env:
+  CACHE: true
+
+jobs:
+  sanity:
+    name: Sanity check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+
+      - name: Setup Environment
+        uses: ./.github/actions/setup
+        with:
+          cargo-cache-key: cargo-sanity
+          components: audit, spellcheck
+
+      - name: cargo-audit
+        run: make audit
+
+      - name: cargo-spellcheck
+        run: make spellcheck
+
+  process:
+    name: Check
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        member: [library, program]
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+
+      - name: Setup Environment
+        uses: ./.github/actions/setup
+        with:
+          cargo-cache-key: cargo-${{ matrix.member }}
+          toolchain: stable, nightly
+          solana: true
+
+      - name: fmt
+        run: make format-check-${{ matrix.member }}
+
+      - name: clippy
+        run: make clippy-${{ matrix.member }}
+
+      - name: build-sbf
+        run: make build-sbf-${{ matrix.member }}
+
+      - name: test
+        run: make test-${{ matrix.member }}

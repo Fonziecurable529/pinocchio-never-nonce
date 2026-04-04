@@ -1,3 +1,4 @@
+RUST_TOOLCHAIN = 1.89.0
 RUST_TOOLCHAIN_NIGHTLY = nightly-2026-01-22
 SOLANA_CLI_VERSION = 3.0.0
 
@@ -11,6 +12,9 @@ pattern-dir = $(firstword $(subst -, ,$1))
 find-pattern-dir = $(findstring $(call pattern-dir,$1)-,$1)
 make-path = $(subst $(call find-pattern-dir,$1),$(subst -,/,$(call find-pattern-dir,$1)),$1)
 
+rust-toolchain:
+	@echo ${RUST_TOOLCHAIN}
+
 rust-toolchain-nightly:
 	@echo ${RUST_TOOLCHAIN_NIGHTLY}
 
@@ -19,6 +23,15 @@ solana-cli-version:
 
 cargo-nightly:
 	cargo $(nightly) $(ARGS)
+
+audit:
+	cargo audit \
+			--ignore RUSTSEC-2022-0093 \
+			--ignore RUSTSEC-2024-0344 \
+			--ignore RUSTSEC-2024-0376 $(ARGS)
+
+spellcheck:
+	cargo spellcheck --code 1 $(ARGS)
 
 clippy-%:
 	cargo $(nightly) clippy --manifest-path $(call make-path,$*)/Cargo.toml \
