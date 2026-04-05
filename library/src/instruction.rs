@@ -1,3 +1,5 @@
+//! Helper to create a "never nonce" instruction.
+
 use {
     crate::PROGRAM_ID,
     alloc::vec,

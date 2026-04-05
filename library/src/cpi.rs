@@ -1,3 +1,5 @@
+//! CPI helper to invoke the `NeverNonce` instruction.
+
 use {
     crate::PROGRAM_ID,
     pinocchio::{

@@ -58,3 +58,9 @@ jobs:
 
       - name: test
         run: make test-${{ matrix.member }}
+
+      - name: build-doc
+        run: make build-doc-${{ matrix.member }}
+
+      - name: test-doc
+        run: make test-doc-${{ matrix.member }}

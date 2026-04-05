@@ -11,7 +11,6 @@ Prevent the use of durable nonces in a transaction.
 
 There are 2 ways you can ensure a transaction does not include an advance nonce instruction.
 
-
 ### 1) Library
 
 Add `p-never-nonce` as a dependency:
@@ -78,7 +77,7 @@ nostd_panic_handler!();
 lazy_program_entrypoint!(process_instruction);
 
 pub fn process_instruction(mut context: InstructionContext) -> ProgramResult {
-    let MaybeAccount::Account(instructions_sysvar) = context.next_account()? else {
+    let MaybeAccount::Account(ref instructions_sysvar) = context.next_account()? else {
         return Err(ProgramError::NotEnoughAccountKeys);
     };
     // The "never-nonce" CPI will return an error if the first instruction

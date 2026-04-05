@@ -53,6 +53,12 @@ sort-check:
 format-rust:
 	cargo $(nightly) fmt --all $(ARGS)
 
+build-doc-%:
+	RUSTDOCFLAGS="--cfg docsrs -D warnings" cargo $(nightly) doc --all-features --no-deps --manifest-path $(call make-path,$*)/Cargo.toml $(ARGS)
+
+test-doc-%:
+	cargo $(nightly) test --doc --all-features --manifest-path $(call make-path,$*)/Cargo.toml $(ARGS)
+
 build-sbf-%:
 	cargo build-sbf --manifest-path $(call make-path,$*)/Cargo.toml --tools-version v1.54 $(ARGS)
 
