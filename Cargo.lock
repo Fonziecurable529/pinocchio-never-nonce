@@ -1620,7 +1620,7 @@ dependencies = [
 
 [[package]]
 name = "pinocchio-never-nonce-program"
-version = "0.0.0"
+version = "1.0.0"
 dependencies = [
  "bincode",
  "mollusk-svm",
