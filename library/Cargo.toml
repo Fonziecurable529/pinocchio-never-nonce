@@ -1,7 +1,7 @@
 [package]
 name = "p-never-nonce"
 description = "Ensure a transaction does not include an advance nonce instruction"
-version = "0.1.0"
+version = "0.2.0"
 readme = "../README.md"
 repository = { workspace = true }
 authors = { workspace = true }
