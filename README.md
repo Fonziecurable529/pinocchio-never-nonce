@@ -98,7 +98,7 @@ cargo add p-never-nonce --features instruction
 Then use:
 
 ```rust
-let never_nonce_ix = p_never_nonce::instruction::never_nonce();`
+let never_nonce_ix = p_never_nonce::instruction::never_nonce();
 ```
 
 ## Verification
