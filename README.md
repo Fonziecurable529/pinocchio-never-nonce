@@ -2,7 +2,7 @@
   <code>p-never-nonce</code>
 </h1>
 <p align="center">
-  <img width="200" alt="pinocchio-never-nonce" src="https://github.com/user-attachments/assets/a6d8d695-4fdb-4fad-960c-fd4d6e73e73a" />
+  <img width="200" alt="pinocchio-never-nonce" src="https://github.com/user-attachments/assets/2461dd61-f38c-4ba6-bc79-7c134b4d1906" />
 </p>
 <p align="center">
 Prevent the use of durable nonces in a transaction.
